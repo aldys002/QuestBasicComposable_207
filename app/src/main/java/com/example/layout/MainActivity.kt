@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyLayoutTheme {
+          MyLayoutTheme{
                 Scaffold (modifier = Modifier.fillMaxSize()) { innerPadding ->
                     //Panggil composable layout utama dengan oaddung dari scaffold
                     TataletakColumnRow(
