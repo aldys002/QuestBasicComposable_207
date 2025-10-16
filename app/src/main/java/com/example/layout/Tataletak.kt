@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
 
 
+
 @Composable
 fun TataletakColumn(modifier: Modifier) {
     Column(modifier = modifier.padding(top = 20.dp, start = 20.dp, end = 20.dp)) {
@@ -122,7 +123,7 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 ){
                     Image(painter = gambar,
                         contentDescription = null,
-                        contentScale = ContentScale.fit)
+                        contentScale = ContentScale.Fit)
                     Text(text = "My Music",
                         fontSize = 50.sp,
                         color = Color.Red,
