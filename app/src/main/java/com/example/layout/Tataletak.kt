@@ -1,18 +1,28 @@
 package com.example.layout
 
+import android.graphics.Paint
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.AlignmentLine
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun TataletakColumn(modifier: Modifier) {
@@ -73,6 +83,56 @@ fun TataLetakRowColumn(modifier: Modifier) {
             Text(text = "Komponen2Kolom2")
             Text(text = "Komponen3Kolom2")
         }
+    }
+}
+
+@Composable
+fun TataletakBoxColumnRow(modifier: Modifier) {
+    val gambar = painterResource(id = R.drawable.notasibalok)
+    Column {
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(height = 110.dp)
+                .background(color = Color.Yellow)
+            contentAlignment = Alignment.Center
+        ){
+            Column() {
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Row(
+                        modifier = modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        Text(text = "Col1_Row2_Komponen1")
+                        Text(text = "Col1_Row2_Komponen2")
+                        Text(text = "Col1_Row2_Komponen3")
+                    }
+                }
+                Spacer(modifier = Modifier.height(height = 10.dp))
+                Box(
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .height(height = 300.dp)
+                        .background(color = Color.Cyan),
+                    contentAlignment = Alignment.Center
+                ){
+                    Image(painter = gambar,
+                        contentDescription = null,
+                        contentScale = ContentScale.fit)
+                    Text(text = "My Music",
+                        fontSize = 50.sp,
+                        color = Color.Red,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Cursive,
+                        modifier = Modifier.align(
+                            alignment = Alignment.Center))
+                }
+            }
+        }
+
     }
 }
 
